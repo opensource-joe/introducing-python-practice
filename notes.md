@@ -6,8 +6,6 @@
 
 ***Zen of Python - import this***
 
-***MD preview - shift command V***
-
 ## Chapter 1
 
 - Computer languages are made of *data* (like nouns in spoken languages) and *instructions* or *code* (like verbs).
@@ -36,3 +34,19 @@
 - In Python, *class* and *type* mean pretty much the same thing.
 - Python has a charmingly named *garbage collector* that reuses the memory of things that are no longer needed.
 - A *list* is a mutable array of values.
+
+## Chapter 3
+
+- Python built in data types: 
+    - Booleans are true or false
+    - Integers are whole numbers
+    - Floats are numbers with decimal points
+
+## Chapter 4
+
+- A comment is a piece of text in your program that is ignored by the Python interpreter. The *#* has many names: hash, sharp, pound, and octothorpe.
+- If you can’t say everything you want to say in that length, you can use the continuation character: \ (backslash).
+- If you’re in the middle of paired parentheses (or square or curly brackets), Python doesn’t squawk about line endings.
+- Four spaces to indent each subsection. Don't use tabs or go back and forth between spaces and tabs because it messes up the indent count.
+- *Truthiness* refers to Truthy values are values that evaluate to True in a boolean context. Falsy values are values that evaluate to False in a boolean context. Falsy values include empty sequences (lists, tuples, strings, dictionaries, sets), zero in every numeric type, None , and False.
+- Whenever you need to make a lot of comparisons like that, separated by *or*, use Python’s membership operator *in*.
