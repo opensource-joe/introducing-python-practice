@@ -50,3 +50,13 @@
 - Four spaces to indent each subsection. Don't use tabs or go back and forth between spaces and tabs because it messes up the indent count.
 - *Truthiness* refers to Truthy values are values that evaluate to True in a boolean context. Falsy values are values that evaluate to False in a boolean context. Falsy values include empty sequences (lists, tuples, strings, dictionaries, sets), zero in every numeric type, None , and False.
 - Whenever you need to make a lot of comparisons like that, separated by *or*, use Python’s membership operator *in*.
+
+*Need to do Ch4 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch04.html#:-:text=Things%20to%20Do
+
+## Chapter 5
+
+- Most programmers work with strings of text more often than numbers.Logical (and creative!) thinking is often more important than math skills.
+- Strings are our first example of a Python sequence. In this case, they’re a sequence of characters.
+- Unlike other languages, strings in Python are immutable. You can’t change a string in place, but you can copy parts of strings to another string to get the same effect.
+
+*Need to do Ch5 exercise - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch05.html#:-:text=Things%20to%20Do
