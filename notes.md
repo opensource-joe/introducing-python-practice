@@ -53,8 +53,6 @@
 - *Truthiness* refers to Truthy values are values that evaluate to True in a boolean context. Falsy values are values that evaluate to False in a boolean context. Falsy values include empty sequences (lists, tuples, strings, dictionaries, sets), zero in every numeric type, None , and False.
 - Whenever you need to make a lot of comparisons like that, separated by *or*, use Python’s membership operator *in*.
 
-*Need to do Ch4 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch04.html#:-:text=Things%20to%20Do
-
 ## Chapter 5: Text Strings
 
 - Most programmers work with strings of text more often than numbers.Logical (and creative!) thinking is often more important than math skills.
@@ -73,3 +71,6 @@
 - A **break** in a **for** loop breaks out of the loop, as it does for a **while** loop.
 - Inserting a **continue** in a **for** loop jumps to the next iteration of the loop, as it does for a **while** loop.
 - Similar to **while**, for has an optional **else** that checks whether the for completed normally. If break was **not** called, the **else** statement is run.
+- The **range()** function returns a stream of numbers within a specified range. without first having to create and store a large data structure such as a list or tuple.
+
+*Need to do Ch6 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch06.html#:-:text=Things%20to%20Do
