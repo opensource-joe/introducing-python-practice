@@ -72,3 +72,36 @@
 - The **range()** function returns a stream of numbers within a specified range. without first having to create and store a large data structure such as a list or tuple.
 
 *Need to do Ch6 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch06.html#:-:text=Things%20to%20Do
+
+## Chapter 7: Tuples and Lists
+
+- Most computer languages can represent a sequence of items indexed by their integer position: first, second, and so on down to the last.
+- **Tuples** are immutable; when you assign elements (only once) to a tuple, they’re baked in the cake and can’t be changed. **Lists** are mutable, meaning you can insert and delete elements with great enthusiasm.
+- **Tuple unpacking** lets you assign multiple variables at once.
+- **Lists** are good for keeping track of things by their order, especially when the order and contents might change. Unlike strings, lists are mutable. You can change a list in place, add new elements, and delete or replace existing elements. The same value can occur more than once in a list.
+- Python’s list() function also converts other **iterable** data types (such as tuples, strings, sets, and dictionaries) to lists.
+-  You can extract a subsequence of a list by using a **slice**.
+- The traditional way of adding items to a list is to **append()** them one by one to the end.
+- When you want to add an item before any offset in the list, use **insert()**.
+- Duplicate a string’s characters with * (e.g., >>> ['blah'] * 3 equals >>> ['blah', 'blah', 'blah']).
+- You can merge one list into another by using **extend()**.
+- Change items in a list with **offset** and **slice**.
+- Delete an item by offset with **del**. **del** is a Python **statement**, not a list method.
+- Can remove items in a list with **remove()**.
+- You can get an item from a list and delete it from the list at the same time by using **pop()**.
+- If you use append() to add new items to the end and pop() to remove them from the same end, you’ve implemented a data structure known as a LIFO (last in, first out) queue. This is more commonly known as a stack. pop(0) would create a FIFO (first in, first out) queue. These are useful when you want to collect data as they arrive and work with either the oldest first (FIFO) or the newest first (LIFO).
+- If you want to know the offset of an item in a list by its value, use **index()**.
+- The Pythonic way to check for the existence of a value in a list is using **in**.
+- To count how many times a particular value occurs in a list, use **count()**.
+- Convert a list to a string with **join()**.
+- Reorder items in a list with **sort()** or **sorted()**.
+- Get length of list with **len()**.
+- Copy with **copy()**, **list()**, or a **slice()**. Copy everything in a list with **deepcopy()**.
+- Compare lists with operators (e.g., ==, <).
+- Iterate through a list with **for** and **in**.
+- **break** ends the **for** loop and **continue** steps to the next iteration.
+- There’s one more nice iteration trick: iterating over multiple sequences in parallel by using the **zip()** function.
+- Create a list with comprehension. List comprehension incorporates the **for**/**in** iteration.
+- Lists can contain other lists.
+
+*Need to do Ch7 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch07.html#:-:text=Things%20to%20Do
