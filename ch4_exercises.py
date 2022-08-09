@@ -1,3 +1,5 @@
+# https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch04.html#:-:text=Things%20to%20Do
+
 # Exercise 4.1
 # secret = 4
 # guess = 2
@@ -15,12 +17,12 @@
 # watermelon: False, True
 # pumpkin: False, False
 
-small = True
-green = True
+# small = True
+# green = True
 
-if small & green:
-    print('you are a pea')
-elif green:
-    print('you are a watermelon')
-else:
-    print('you are a cherry or pumpkin')
+# if small & green:
+#     print('you are a pea')
+# elif green:
+#     print('you are a watermelon')
+# else:
+#     print('you are a cherry or pumpkin')

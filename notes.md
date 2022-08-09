@@ -59,8 +59,6 @@
 - Strings are our first example of a Python sequence. In this case, they’re a sequence of characters.
 - Unlike other languages, strings in Python are immutable. You can’t change a string in place, but you can copy parts of strings to another string to get the same effect.
 
-*Need to do Ch5 exercise - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch05.html#:-:text=Things%20to%20Do
-
 ## Chapter 6: Loop with While and For
 
 - Sometimes, we need to do something more than once. We need a **loop**, and Python gives us two choices: **while** and **for**.
