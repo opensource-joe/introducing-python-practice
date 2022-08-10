@@ -18,25 +18,33 @@
 
 # 7.5 Capitalize the element in things that refers to a person and then print the list. Did it change the element in the list?
 
-# things[1] = 'Cindarella'
+# things[1] = things[1].capitalize()
 
 # 7.6 Make the cheesy element of things all uppercase and then print the list.
 
-# things[0] = 'Mozzarella'
+# things[0] = things[0].upper()
+# print(things)
 
 # 7.7 Delete the disease element from things, collect your Nobel Prize, and print the list.
 
 # del things[2]
-# things.append('Noble Prize')
 # print(things)
 
 # 7.8 Create a list called surprise with the elements "Groucho", "Chico", and "Harpo".
 
-surprise = ['Groucho', 'Chico', 'Harpo']
+# surprise = ['Groucho', 'Chico', 'Harpo']
 
 # 7.9 Lowercase the last element of the surprise list, reverse it, and then capitalize it.
 
+# surprise[-1] = surprise[-1].lower()
+# surprise[-1] = surprise[-1][::-1]
+# surprise[-1].capitalize()
+# print(surprise[-1])
+
 # 7.10 Use a list comprehension to make a list called even of the even numbers in range(10).
+
+even = [number for number in range(2, 11, 2)]
+print(even)
 
 # 7.11 Let’s create a jump rope rhyme maker. You’ll print a series of two-line rhymes. Start with this program fragment:
 
