@@ -105,3 +105,21 @@
 - Lists can contain other lists.
 
 *Need to do Ch7 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch07.html#:-:text=Things%20to%20Do
+
+## Chapter 8: Dictionaries and Sets
+
+- A **dictionary** is similar to a list, but the order of items doesn’t matter, and they aren’t selected by an offset such as 0 or 1. Instead, you specify a unique **key** to associate with each **value**.
+- Dictionaries are mutable, so you can add, delete, and change their key-value elements.
+- In Python, a dictionary is also called a **dict** to save syllables. 
+- To create a dictionary, you place curly brackets ({}) around comma-separated **key** : **value** pairs. 
+- You can also create a dictionary by passing named arguments and values to the dict() function.
+- You can also use the dict() function to convert two-value sequences into a dictionary.
+- Adding an item to a dictionary is easy. Just refer to the item by its key and assign a value. If the key was already present in the dictionary, the existing value is replaced by the new one. If the key is new, it’s added to the dictionary with its value.
+- Remember that dictionary keys must be unique.
+- You can use **keys()** to get all of the keys in a dictionary.
+- When you want to get all the key-value pairs from a dictionary, use the **items()** function.
+- Starting with Python 3.5, there’s a new way to merge dictionaries, using the ** unicorn glitter.
+- You can use the **update()** function to copy the keys and values of one dictionary into another.
+- A **set** is like a dictionary with its values thrown away, leaving only the keys. As with a dictionary, each key must be unique. You use a set when you only want to know that something exists, and nothing else about it.
+
+*Need to do Ch8 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch08.html#:-:text=Things%20to%20Do
