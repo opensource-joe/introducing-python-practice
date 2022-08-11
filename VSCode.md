@@ -34,4 +34,19 @@
 
 ## Extensions and Themes
 
-31 minute in video
+- Themes: Night Owl (Sara Drasner), Winter is Coming, Linux, Zeppelin
+- Extensions:
+    - Prettier - code formatting in VSCode - format on Save: format code when save
+    - Advanced New File - create new file from command palate
+    - Better Comments extension - allows for //TODO, //!, //PARAM
+    - Live Server extension - serves file from real port in web browser (more for front-end work)
+    - Polacode - create nice pictures of code to share
+    - Bracket Pair Colorizer - color brackets to match each other
+    - Bookmarks - can set bookmarks inside files and toggle through code in file
+    - Cloak - working with private credentials and doing screen recordings - uses .env file and will hide when turned on
+    - Debugger for Chrome - debug extension for Chrome
+    - DotENV - for working with .env files
+    - EditorConfig for VS Code - keep files formatted across teams
+    - Markdown PDF - write .md files and export as .pdf file for writing papers, books, etc.
+
+## Keyboard Shortcuts
