@@ -71,8 +71,6 @@
 - Similar to **while**, for has an optional **else** that checks whether the for completed normally. If break was **not** called, the **else** statement is run.
 - The **range()** function returns a stream of numbers within a specified range. without first having to create and store a large data structure such as a list or tuple.
 
-*Need to do Ch6 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch06.html#:-:text=Things%20to%20Do
-
 ## Chapter 7: Tuples and Lists
 
 - Most computer languages can represent a sequence of items indexed by their integer position: first, second, and so on down to the last.
@@ -104,8 +102,6 @@
 - Create a list with comprehension. List comprehension incorporates the **for**/**in** iteration.
 - Lists can contain other lists.
 
-*Need to do Ch7 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch07.html#:-:text=Things%20to%20Do
-
 ## Chapter 8: Dictionaries and Sets
 
 - A **dictionary** is similar to a list, but the order of items doesn’t matter, and they aren’t selected by an offset such as 0 or 1. Instead, you specify a unique **key** to associate with each **value**.
@@ -122,4 +118,4 @@
 - You can use the **update()** function to copy the keys and values of one dictionary into another.
 - A **set** is like a dictionary with its values thrown away, leaving only the keys. As with a dictionary, each key must be unique. You use a set when you only want to know that something exists, and nothing else about it.
 
-*Need to do Ch8 exercises - https://learning.oreilly.com/library/view/introducing-python-2nd/9781492051374/ch08.html#:-:text=Things%20to%20Do
+## Chapter 9: Functions

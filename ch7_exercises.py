@@ -43,10 +43,18 @@
 
 # 7.10 Use a list comprehension to make a list called even of the even numbers in range(10).
 
-even = [number for number in range(2, 11, 2)]
-print(even)
+# even = [number for number in range(2, 11, 2)]
+# print(even)
 
 # 7.11 Let’s create a jump rope rhyme maker. You’ll print a series of two-line rhymes. Start with this program fragment:
+
+# For the first line:
+# Print each string in start1, capitalized and followed by an exclamation point and a space.
+# Print first, also capitalized and followed by an exclamation point.
+
+# For the second line:
+# Print start2 and a space.
+# Print second and a period.
 
 # start1 = ["fee", "fie", "foe"]
 # rhymes = [
@@ -59,12 +67,8 @@ print(even)
 #     ("fun", "say we're done"),
 #     ]
 # start2 = "Someone better"
-# For each tuple (first, second) in rhymes:
 
-# For the first line:
-# Print each string in start1, capitalized and followed by an exclamation point and a space.
-# Print first, also capitalized and followed by an exclamation point.
-
-# For the second line:
-# Print start2 and a space.
-# Print second and a period.
+# start1_caps = ' '.join([word.capitalize() + '!' for word in start1])
+# for first, second in rhymes:
+#     print(f'{start1_caps} {first.capitalize()}!')
+#     print(f'{start2}{second}.')
