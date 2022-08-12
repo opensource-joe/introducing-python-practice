@@ -119,3 +119,30 @@
 - A **set** is like a dictionary with its values thrown away, leaving only the keys. As with a dictionary, each key must be unique. You use a set when you only want to know that something exists, and nothing else about it.
 
 ## Chapter 9: Functions
+
+- The first step to code reuse is the function: a named piece of code, separate from all others. A function can take any number and type of input parameters and return any number and type of output results.
+- You can do two things with a function:
+    - Define it, with zero or more parameters
+    - Call it, and get zero or more results
+- Even for a function with no parameters like this one, you still need the parentheses and the colon in its definition. The next line needs to be indented.
+- You call a function just by typing its name and parentheses.
+- The values you pass into the function when you call it are known as arguments.
+- Arguments outside of the function, but parameters inside.
+- If a function doesn’t call return explicitly, the caller gets the result None.
+- **None** is a special Python value that holds a place when there is nothing to say.
+- This (the difference between None and False) seems like a subtle distinction, but it’s important in Python. You’ll need None to distinguish a missing value from an empty value.
+- The most familiar types of arguments are positional arguments, whose values are copied to their corresponding parameters in order.
+- Although very common, a downside of positional arguments is that you need to remember the meaning of each position.
+- To avoid positional argument confusion, you can specify arguments by the names of their corresponding parameters.
+- You can specify default values for parameters.
+- When used inside the function with a parameter, an asterisk groups a variable number of positional arguments into a single tuple of parameter values.
+- You can use two asterisks (**) to group keyword arguments into a dictionary, where the argument names are the keys, and their values are the corresponding dictionary values.
+- 
+
+
+---
+- REPL (from Real Python)
+- **methods** in the REPL - dir(variable)
+- help(int)
+- https://github.com/topics/python
+---
