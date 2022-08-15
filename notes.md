@@ -137,7 +137,12 @@
 - You can specify default values for parameters.
 - When used inside the function with a parameter, an asterisk groups a variable number of positional arguments into a single tuple of parameter values.
 - You can use two asterisks (**) to group keyword arguments into a dictionary, where the argument names are the keys, and their values are the corresponding dictionary values.
-- 
+- You can attach documentation to a function definition by including a string at the beginning of the function body.
+- To print a function’s docstring, call the Python help() function.
+- Double underscores (aka dunder in Python-speak) are used in many places to name Python internal variables, because programmers are unlikely to use them in their own variable names.
+- Functions are first-class citizens in Python. You can assign them to variables, use them as arguments to other functions, and return them from functions.
+
+**Stopped at Functions are First-Class Citizens b/c iPad highlights not syncing w/ browser**
 
 
 ---
