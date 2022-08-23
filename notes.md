@@ -163,3 +163,28 @@
 - ou can also define your own exception types to handle special situations that might arise in your own programs.
 
 ## Chapter 10: Objects and Classes
+
+- An object is a custom data structure containing both data (variables, called attributes) and code (functions, called methods). It represents a unique instance of some concrete thing. Think of objects as nouns and their methods as verbs.
+- An attribute is a variable inside a class or object. During and after an object or class is created, you can assign attributes to it. An attribute can be any other object.
+- A method is a function in a class or object. A method looks like any other function, but can be used in special ways.
+- __init__() is the special Python name for a method that initializes an individual object from its class definition.
+- Inheritance: creating a new class from an existing class, but with some additions or changes.
+- Inheritance in Python depends on method resolution order.
+- Python uses the self argument to find the right object’s attributes and methods.
+- Python doesn’t have private attributes, but you can write getters and setters with obfuscated attribute names to get a little privacy. The best solution is to use properties.
+- When you see an initial self argument in methods within a class definition, it’s an instance method. These are the types of methods that you would normally write when creating your own classes.
+- A class method affects the class as a whole. Any change you make to the class affects all of its objects. Within a class definition, a preceding @classmethod decorator indicates that that following function is a class method.
+- A third type of method in a class definition affects neither the class nor its objects; it’s just in there for convenience instead of floating around on its own. It’s a static method, preceded by a @staticmethod decorator, with no initial self or cls parameter.
+- Python has a loose implementation of polymorphism; it applies the same operation to different objects, based on the method’s name and arguments, regardless of their class.
+- It’s tempting to build elaborate inheritance hierarchies, but sometimes composition or aggregation make more sense.
+- A named tuple is a subclass of tuples with which you can access values by name (with .name) as well as by position (with [ offset ]).
+- Many people like to create objects mainly to store data (as object attributes), not so much behavior (methods).
+- Dataclasses - use from dataclasses import dataclass for additional functionality beyond tuples.
+
+## Chapter 11: Modules, Packages, and Goodies
+
+- Code has a roughly similar bottom-up organization: data types are like words; expressions and statements are like sentences; functions are like paragraphs; and modules are like chapters.
+- A module is just a file of any Python code. You don’t need to do anything special—any Python code can be used as a module by others.
+- We refer to code of other modules by using the Python import statement. This makes the code and variables in the imported module available to your program.
+- The simplest use of the import statement is import module, where module is the name of another Python file, without the .py extension.
+- Consider importing from outside the function if the imported code might be used in more than one place, and from inside if you know its use will be limited.
