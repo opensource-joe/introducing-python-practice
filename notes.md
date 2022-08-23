@@ -188,3 +188,17 @@
 - We refer to code of other modules by using the Python import statement. This makes the code and variables in the imported module available to your program.
 - The simplest use of the import statement is import module, where module is the name of another Python file, without the .py extension.
 - Consider importing from outside the function if the imported code might be used in more than one place, and from inside if you know its use will be limited.
+- You can import a whole module or just parts of it.
+- To allow Python applications to scale even more, you can organize modules into file and module hierarchies called packages. A package is just a subdirectory that contains .py files. And you can go more than one level deep, with directories inside those.
+- Python looks under your current directory for the subdirectory choices and its modules. Actually, it looks in other places, as well, and you can control this.
+- You’ve seen that you can package Python modules as:
+    - A single module (.py file)
+    - A package (directory containing modules, and possibly other packages)
+    - You can also split a package across directories with namespace packages.
+- When you’re about to write some Python code, it’s often worthwhile to first check whether there’s a standard module that already does what you want. It’s surprising how often you encounter little gems in the standard library.
+- Sometimes, the standard library doesn’t have what you need, or doesn’t do it in quite the right way. There’s an entire world of open source, third-party Python software. Good resources include the following:
+ - PyPi (also known as the Cheese Shop, after an old Monty Python skit)
+    - GitHub
+    - readthedocs
+
+## Chapter 12: ...
