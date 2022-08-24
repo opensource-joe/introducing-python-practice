@@ -1,3 +1,4 @@
+mammoth = '''
 We have seen thee, queen of cheese,
 Lying quietly at your ease,
 Gently fanned by evening breeze,
@@ -27,3 +28,4 @@ We'rt thou suspended from balloon,
 You'd cast a shade even at noon,
 Folks would think it was the moon
 About to fall and crush them soon.
+'''
