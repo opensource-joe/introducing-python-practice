@@ -201,4 +201,23 @@
     - GitHub
     - readthedocs
 
-## Chapter 12: ...
+## Chapter 12: Wrangle and Mangle Data
+
+- This chapter provides practical techniques for taming data. Sometimes, this is called data munging, or the more businesslike ETL (extract/transform/load) of the database world.
+- Data formats fall roughly into two categories: text and binary.
+- Unicode is an ongoing international standard to define the characters of all the world’s languages, plus symbols from mathematics and other fields.
+- [Unicode Code Charts page](http://www.unicode.org/charts/) has links to all the currently defined character sets with images. The latest version (12.0) defines more than 137,000 characters, each with a unique name and identification number. Python 3.8 handles all of these.
+- When you exchange data with the outside world, you need a couple of things:
+    - A way to encode character strings to bytes.
+    - A way to decode bytes to character strings.
+- UTF-8 is the standard text encoding in Python, Linux, and HTML.
+- You encode a string to bytes.
+- We decode byte strings to Unicode text strings.
+- Whenever we get text from some external source (files, databases, websites, network APIs, and so on), it’s encoded as byte strings. The tricky part is knowing which encoding was actually used, so we can run it backward and get Unicode strings.
+- Whenever possible, use UTF-8 encoding. It works, is supported everywhere, can express every Unicode character, and is quickly decoded and encoded.
+- Python 3.4 added another way to convert to and from Unicode but using HTML character entities.
+- Some Unicode characters can be represented by more than one Unicode encoding.
+- It’s time to explore more complex pattern matching by using regular expressions. These are provided in the standard module re, which we’ll import. You define a string pattern that you want to match, and the source string to match against.
+- Because this is a common Python gotcha, I’ll say it again here: match() only matches a pattern starting at the beginning of the source. search() matches a pattern anywhere in the source.
+
+## Chapter 13 ...
