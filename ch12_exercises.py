@@ -60,9 +60,21 @@
 
 # '47494638396101000100800000000000ffffff21f9' +
 # '0401000000002c000000000100010000020144003b'
+
+# import binascii
+# hex_str = '47494638396101000100800000000000ffffff21f9' + '0401000000002c000000000100010000020144003b'
+# gif = binascii.unhexlify(hex_str)
+# print(len(gif))
+
 # 12.10 The bytes in gif define a one-pixel transparent GIF file, one of the most common graphics file formats. A legal GIF starts with the ASCII characters GIF89a. Does gif match this?
 
+# print(gif[:6] == b'GIF89a')
+
 # 12.11 The pixel width of a GIF is a 16-bit little-endian integer beginning at byte offset 6, and the height is the same size, starting at offset 8. Extract and print these values for gif. Are they both 1?
+
+# import struct
+# width, height = struct.unpack('<HH', gif[6:10])
+# print(width, height)
 
 # This wine has an umlaut in Germany, but loses it in Alsace on the way to France.
 
