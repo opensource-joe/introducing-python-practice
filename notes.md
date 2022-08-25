@@ -220,4 +220,15 @@
 - It’s time to explore more complex pattern matching by using regular expressions. These are provided in the standard module re, which we’ll import. You define a string pattern that you want to match, and the source string to match against.
 - Because this is a common Python gotcha, I’ll say it again here: match() only matches a pattern starting at the beginning of the source. search() matches a pattern anywhere in the source.
 
-## Chapter 13 ...
+## Chapter 13: Calendars and Clocks
+
+- Python’s standard library has many date and time modules, including: datetime, time, calendar, dateutil, and others.
+- The standard datetime module handles (which should not be a surprise) dates and times. It defines four main object classes, each with many methods:
+    - date for years, months, and days
+    - time for hours, minutes, seconds, and fractions
+    - datetime for dates and times together
+    - timedelta for date and/or time intervals
+- One way to represent an absolute time is to count the number of seconds since some starting point. Unix time uses the number of seconds since midnight on January 1, 1970.1 This value is often called the epoch, and it is often the simplest way to exchange dates and times among systems.
+- Epoch values are a useful least-common denominator for date and time exchange with different systems, such as JavaScript. Sometimes, though, you need actual days, hours, and so forth, which time provides as struct_time objects. localtime() provides the time in your system’s time zone, and gmtime() provides it in UTC.
+- Wherever possible, use UTC instead of time zones. UTC is an absolute time, independent of time zones. If you have a server, set its time to UTC; do not use local time.
+- Never use daylight savings time if you can avoid it.
