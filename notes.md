@@ -232,3 +232,168 @@
 - Epoch values are a useful least-common denominator for date and time exchange with different systems, such as JavaScript. Sometimes, though, you need actual days, hours, and so forth, which time provides as struct_time objects. localtime() provides the time in your system’s time zone, and gmtime() provides it in UTC.
 - Wherever possible, use UTC instead of time zones. UTC is an absolute time, independent of time zones. If you have a server, set its time to UTC; do not use local time.
 - Never use daylight savings time if you can avoid it.
+
+## Chapter 14: Files and Directories
+
+- A file is a sequence of bytes, stored in some filesystem, and accessed by a filename. A directory is a collection of files, and possibly other directories. The term folder is a synonym for directory.
+- Many filesystems are hierarchical, and often referred to as being like a tree.
+- The simplest kind of persistence is a plain old file, sometimes called a flat file. You read from a file into memory and write from memory to a file.
+- You need to call the open function before you do the following:
+    - Read an existing file
+    - Write to a new file
+    - Append to an existing file
+    - Overwrite an existing file
+- fileobj = open( filename, mode )
+- An alternative to reading and writing a file is to memory-map it with the standard mmap module. This makes the contents of a file look like a bytearray in memory.
+- In most operating systems, files exist in a hierarchy of directories (often called folders). The container of all of these files and directories is a filesystem (sometimes called a volume). The standard os module deals with operating specifics such as these and provides the following functions with which you can manipulate them.
+- When you want to refer to a specific file or directory, you need its pathname: the sequence of directories needed to get there, either absolute from the top (the root), or relative to your current directory.
+
+## Chapter 15: Data in Time - Processes and Concurrency
+
+- When you run an individual program, your operating system creates a single process. It uses system resources (CPU, memory, disk space) and data structures in the operating system’s kernel (file and network connections, usage statistics, and so on). A process is isolated from other processes.
+- The multiprocessing module has more bells and whistles than a clown on a calliope. It’s really intended for those times when you need to farm out some task to multiple processes to save overall time; for example, downloading web pages for scraping, resizing images, and so on. It includes ways to queue tasks, enable intercommunication among processes, and wait for all the processes to finish.
+- A queue is like a list: things are added at one end and taken away from the other. The most common is referred to as FIFO (first in, first out).
+- In general, queues transport messages, which can be any kind of information.
+- You can implement queues in many ways. For a single machine, the standard library’s multiprocessing module (which you saw earlier) contains a Queue function.
+- There are other queue types in the multiprocessing module, and you can read the documentation for more examples.
+- A thread runs within a process with access to everything in the process.
+- One difference between multiprocessing and threading is that threading does not have a terminate() function. There’s no easy way to terminate a running thread, because it can cause all sorts of problems in your code, and possibly in the space-time continuum itself.
+- So for Python, the recommendations are as follows:
+    - Use threads for I/O-bound problems
+    - Use processes, networking, or events (discussed in the next section) for CPU-bound problems
+- You can use concurrent.futures any time you want to launch a bunch of concurrent tasks, such as the following:
+    - Crawling URLs on the web
+    - Processing files, such as resizing images
+    - Calling service APIs
+    - As usual, the docs provide additional details, but are much more technical.
+
+## Chapter 16: Data in a Box - Persistent Storage
+
+- An active program accesses data stored in Random Access Memory, or RAM.
+- As programmers, we need persistence: storing and retrieving data using nonvolatile media such as disks.
+- A record is a term for one chunk of related data, consisting of individual fields.
+- The simplest persistence is a plain old flat file. This works well if your data has a very simple structure and you exchange all of it between disk and memory. Plain text data might be suitable for this treatment.
+- If you want to exchange data structures among programs, you need a way to encode hierarchies, sequences, sets, and other structures as text. XML is a prominent markup format that does this.
+- JavaScript Object Notation (JSON) has become a very popular data interchange format, beyond its JavaScript origins. The JSON format is a subset of JavaScript, and often legal Python syntax, as well. Its close fit to Python makes it a good choice for data interchange among programs.
+- Similar to JSON, YAML has keys and values, but handles more data types such as dates and times. The standard Python library does not yet include YAML handling, so you need to install a third-party library named yaml to manipulate it.
+- This is as good place as any to introduce pandas—a Python library for structured data.
+- It’s especially useful for heavy numeric work with NumPy, and data preparation for machine learning.
+- Relational databases are only about 40 years old but are ubiquitous in the computing world.
+- These are called relational because they show relationships among different kinds of data in the form of rectangular tables.
+- A table is a rectangular grid of columns (data fields) and rows (individual data records), similar to a spreadsheet. The intersection of a row and column is a table cell.
+- A column or group of columns is usually the table’s primary key; its values must be unique in the table. This prevents adding the same data to the table more than once. This key is indexed for fast lookups during queries.
+- Each table lives within a parent database, like a file within a directory.
+- The word database is used in multiple ways: as the server, the table container, and the data stored therein. If you’ll be referring to all of them at the same time, it might help to call them database server, database, and data.
+- SQL is not an API or a protocol, but a declarative language: you say what you want rather than how to do it. It’s the universal language of relational databases. SQL queries are text strings sent by a client to the database server, which in turn figures out what to do with them.
+- There are two main categories of SQL statements:
+    - DDL (data definition language) - Handles creation, deletion, constraints, and permissions for tables, databases, and users.
+    - DML (data manipulation language) - Handles data insertions, selects, updates, and deletions.
+- An application programming interface (API) is a set of functions that you can call to get access to some service. DB-API is Python’s standard API for accessing relational databases.
+- SQLite is a good, light, open source relational database. It’s implemented as a standard Python library, and stores databases in normal files.
+- MySQL is a very popular open source relational database. Unlike SQLite, it’s an actual server, so clients can access it from different devices across the network.
+- PostgreSQL is a full-featured open source relational database. Indeed in many ways, it’s more advanced than MySQL.
+- Some nonrelational databases have been written to allow more flexible data definitions as well as to process very large data sets or support custom data operations.
+- The simplest type of NoSQL databases are key-value stores.
+- Redis is a data structure server. It handles keys and their values, but the values are richer than those in other key-value stores.
+- A document database is a NoSQL database that stores data with varying fields.
+- You could handle data like this in memory with Python dictionaries and lists, or store it as JSON files.
+- Time series data may be collected at fixed intervals (such as computer performance metrics) or at random times, which has led to many storage methods.
+- For our last case of data that need its own database category, we have graphs: nodes (data) connected by edges or vertices (relationships).
+
+## Chapter 17: Data in Space - Networks
+
+- Concurrency: how to do more than one thing at a time.
+- Trying to do things in more than one place: distributed computing or networking.
+- The internet is based on rules about how to make connections, exchange data, terminate connections, handle timeouts, and so on. These are called protocols, and they are arranged in layers.
+- TCP sets up a secret handshake between sender and receiver to ensure a good connection.
+- The lowest level of network programming uses a socket, borrowed from the C language and the Unix operating system.
+- You can build networking applications from some basic patterns:
+    - The most common pattern is request-reply, also known as request-response or client-server. This pattern is synchronous: the client waits until the server responds.
+    - Another common pattern is push, or fanout: you send data to any available worker in a pool of processes.
+    - Another common pattern is push, or fanout: you send data to any available worker in a pool of processes.
+    - One pattern is similar to radio or television broadcasting: publish-subscribe, or pub-sub. With this pattern, a publisher sends out data. In a simple pub-sub system, all subscribers would receive a copy.
+- The Domain Name System (DNS) is a critical internet service that converts IP addresses to and from names via a distributed database.
+- If data is published only on a website, anyone who wants to access and structure the data needs to write scrapers (as shown in “Crawl and Scrape”), and rewrite them each time a page format changes.
+- In contrast, if a website offers an API to its data, the data becomes directly available to client programs.
+- The easiest API is a web interface, but one that provides data in a structured format such as JSON or XML rather than plain text or HTML. The API might be minimal or a full-fledged RESTful API (defined in “Web APIs and REST”), but it provides another outlet for those restless bytes.
+- JSON is a popular serialization format, especially with web RESTful systems, but it can’t express all Python data types directly. Also, as a text format it tends to be more verbose than some binary serialization methods.
+- Python provides the pickle module to save and restore any object in a special binary format.
+- Remote Procedure Calls (RPCs) look like normal functions but execute on remote machines across a network. Instead of calling a RESTful API with arguments encoded in the URL or request body, you call an RPC function on your own machine.
+- As Google and other internet companies grew, they found that traditional computing solutions didn’t scale. Software that worked for single machines, or even a few dozen, could not keep up with thousands.
+- Disk storage for databases and files involved too much seeking, which requires mechanical movement of disk heads.
+- Developers found that it was faster to distribute and analyze data on many networked machines than on individual ones. They could use algorithms that sounded simplistic but actually worked better overall with massively distributed data.
+- After Google published its MapReduce results in a paper, Yahoo followed with an open source Java-based package named Hadoop.
+- The phrase big data applies here. Often it just means “data too big to fit on my machine”: data that exceeds the disk, memory, CPU time, or all of the above. To some organizations, if big data is mentioned somewhere in a question, the answer is always Hadoop. Hadoop copies data among machines, running them through map (scatter) and reduce (gather) programs, and saving the results on disk at each step.
+- A quicker method called Hadoop streaming works like Unix pipes, streaming the data through programs without requiring disk writes at each step. You can write Hadoop streaming programs in any language, including Python.
+- Many Python modules have been written for Hadoop, and some are discussed in the blog post “A Guide to Python Frameworks for Hadoop”.
+- A rival named Spark was designed to run 10 to 100 times faster than Hadoop. It can read and process any Hadoop data source and format. Spark includes APIs for Python and other languages. You can find the installation documents online.
+The eight fallacies of distributed computing, according to Peter Deutsch, are as follows:
+    - The network is reliable.
+    - Latency is zero.
+    - Bandwidth is infinite.
+    - The network is secure.
+    - Topology doesn’t change.
+    - There is one administrator.
+    - Transport cost is zero.
+    - The network is homogeneous.
+- OpenStack is an open source framework of Python services and REST APIs.
+
+## Chapter 18: The Web, Untangled
+
+- Python is a particularly good language for web work at every level:
+    - Clients, to access remote sites
+    - Servers, to provide data for websites and web APIs
+    - Web APIs and services, to interchange data in other ways than viewable web pages
+- The curl program is probably the most popular command-line web client. Documentation includes the book Everything Curl.
+- In Python 2, web client and server modules were a bit scattered. One of the Python 3 goals was to bundle these modules into two packages: 1) http, 2)urllib.
+- I think web client development with requests is easier. You can browse the documentation (which is pretty good) for full details.
+- Web developers have found Python to be an excellent language for writing web servers and server-side programs. This has led to such a variety of Python-based web frameworks.
+- A web framework provides features with which you can build websites.
+- Web servers handle the HTTP and WSGI details, but you use web frameworks to actually write the Python code that powers the site.
+- The web and databases are the peanut butter and jelly of computing: where you find one, you’ll eventually find the other. In real-life Python applications, at some point you’ll probably need to provide a web interface (site and/or API) to a relational database.
+- Often, data is available only within web pages. If you want to access it, you need to access the pages through a web browser and read it.
+- Representational State Transfer (REST) was defined by Roy Fielding in his doctoral thesis. Many products claim to have a REST interface or a RESTful interface. In practice, this often only means that they have a web interface—definitions of URLs to access a web service.
+- A RESTful service uses the HTTP verbs in specific ways:
+    - HEAD gets information about the resource, but not its data.
+    - GET retrieves the resource’s data from the server. This is the standard method used by your browser. GET should not be used to create, change, or delete data.
+    - POST creates a new resource.
+    - PUT replaces an existing resource, creating it if it doesn’t exist.
+    - PATCH partially updates a resource.
+    - DELETE deletes. Truth in advertising!
+- Sometimes, you might want a little bit of information—a movie rating, stock price, or product availability—but what you need is available only in HTML pages.
+- An automated web fetcher is called a crawler or spider.4 After the contents have been retrieved from the remote web servers, a scraper parses it to find the needle in the haystack.
+- If you need an industrial-strength combined crawler and scraper, Scrapy is worth downloading.
+- Scrapy is a framework, not just a module such as BeautifulSoup. It does more, but it’s more complex to set up. To learn more about Scrapy, read “Scrapy at a Glance” and the tutorial.
+- If you already have the HTML data from a website and just want to extract data from it, BeautifulSoup is a good choice. HTML parsing is harder than it sounds. This is because much of the HTML on public web pages is technically invalid: unclosed tags, incorrect nesting, and other complications. If you try to write your own HTML parser by using regular expressions (discussed in “Text Strings: Regular Expressions”) you’ll soon encounter these messes.
+- Kenneth Reitz, the author of the popular web client package requests, has written a new scraping library called requests-html.
+
+## Chapter 19: Be a Pythonista
+
+- When you need to develop some code, the fastest solution is to steal it…from a source that allows it.
+- The Python standard library is wide, deep, and mostly clear. Dive in and look for those pearls.
+- The first place to look is the Python Package Index (PyPI).
+- Another popular repository is GitHub. See what Python packages are currently trending.
+- Popular Python recipes has more than four thousand short Python programs, on every subject.
+- Jupyter is an evolution of IPython. The name combines the languages Julia, Python, and R—all of which are popular in data science and scientific computing. Jupyter Notebooks are a modern way to develop and publish your code with documentation for any of these languages.
+- JupyterLab is the next generation of Jupyter Notebook and will eventually replace it.
+- Static languages require you to define the types of your variables, and they can catch some errors at compile time. As you know, Python doesn’t do this, and you can encounter bugs only when the code is run.
+- The very simplest way to test Python programs is to add print() statements.
+- The next step, before creating actual test programs, is to run a Python code checker. The most popular are pylint and pyflakes.
+- Move on to actual tests of the logic in your program.
+- It’s a good practice to write independent test programs first, to ensure that they all pass before you commit your code to any source control system.
+- The standard library contains not one, but two test packages. Let’s start with unittest.
+- The second test package in the standard library is doctest. With this package, you can write tests within the docstring itself, also serving as documentation.
+- Test first. The better your tests are, the less you’ll have to fix later. Yet, bugs happen and need to be fixed when they’re found later.
+- When code breaks, it’s usually because of something you just did. So you typically debug “from the bottom up,” starting with your most recent changes.
+- The simplest way to debug in Python is to print out strings. Some useful things to print include vars(), which extracts the values of your local variables, including function arguments.
+- If your code also includes normal prints to standard output, you can write your debugging messages to standard error output with print(stuff, file=sys.stderr).
+- As you read in “Decorators”, a decorator can call code before or after a function without modifying the code within the function itself. This means that you can use a decorator to do something before or after any Python function, not just ones that you wrote.
+- Use of the standard Python debugger, pdb.
+- There’s a new built-in function called breakpoint(). If you add it to your code, a debugger will automatically start up and pause at each location.
+- The standard Python library module is logging.
+- A quick way of timing something is to get the current time, do something, get the new time, and then subtract the original time from the new time.
+
+## Three Remaining Chapters (domain specific)
+- Chapter 20: Py Art
+- Chapter 21: Py at Work
+- Chapter 22: Py Sci
